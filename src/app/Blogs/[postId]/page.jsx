@@ -41,11 +41,26 @@ const blogsData = [
         date: "2026-09-14"
     }
 ];
+
 const page = async ({ params }) => {
     const { postId } = await params;
+    const post = blogsData.find(post => post.id === parseInt(postId))
+
     return (
         <div>
             <h3>Blogs details:{postId}</h3>
+            {
+                post && <div>
+                    <h2>{post.title}</h2>
+                    <h2>{post.author}</h2>
+                    <h2>{post.date}</h2>
+                    <h2>{post.category}</h2>
+                    <h2>{post.category}</h2>
+                    <h2>{post.discription}</h2>
+                </div>
+
+
+            }
 
         </div>
     );

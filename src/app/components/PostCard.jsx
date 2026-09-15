@@ -1,6 +1,7 @@
+import Link from "next/link";
 
 const PostCard = ({ post }) => {
-    const { title, description, category, date } = post;
+    const { title, description, category, date, id } = post;
     return (
         <div className="card bg-base-100 w-96 shadow-sm">
             <div className="card-body">
@@ -8,7 +9,9 @@ const PostCard = ({ post }) => {
                 <span>Publish Data: {date}</span>
                 <p>{description}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Read more</button>
+                    <Link href={`/blogs/${id}`}>
+                        <button className="btn btn-primary">Read more</button>
+                    </Link>
                 </div>
             </div>
         </div>
