@@ -1,9 +1,10 @@
+import { useId } from "react";
 
-const UserDataPage = async () => {
-    // const { userId } = await params;
+const UserDataPage = async ({ params }) => {
+    const { userId } = await params;
     return (
         <div>
-            User Id:
+            User Id:{userId}
 
         </div>
     );
